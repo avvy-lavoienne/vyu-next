@@ -1,15 +1,14 @@
-"use client"
+"use client";
 
-import type React from "react"
-
-import { useState } from "react"
-import { motion } from "framer-motion"
-import { Button } from "@/components/ui/button"
-import { Input } from "@/components/ui/input"
-import { Textarea } from "@/components/ui/textarea"
-import { Label } from "@/components/ui/label"
-import { AlertCircle, CheckCircle2, Mail, MapPin, Phone } from "lucide-react"
-import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert"
+import type React from "react";
+import { useState } from "react";
+import { motion } from "framer-motion";
+import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
+import { Textarea } from "@/components/ui/textarea";
+import { Label } from "@/components/ui/label";
+import { AlertCircle, CheckCircle2, Mail, MapPin, Phone } from "lucide-react";
+import { Alert, AlertTitle, AlertDescription } from "@/components/ui/alert";
 
 export function ContactSection() {
   const [formState, setFormState] = useState({
@@ -17,40 +16,47 @@ export function ContactSection() {
     email: "",
     subject: "",
     message: "",
-  })
+  });
 
-  const [formStatus, setFormStatus] = useState<"idle" | "submitting" | "success" | "error">("idle")
+  const [formStatus, setFormStatus] = useState<"idle" | "success">("idle");
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+  const handleChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) => {
     setFormState({
       ...formState,
       [e.target.name]: e.target.value,
-    })
-  }
+    });
+  };
 
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault()
-    setFormStatus("submitting")
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
 
-    // Simulate API call
-    try {
-      await new Promise((resolve) => setTimeout(resolve, 1500))
-      setFormStatus("success")
-      setFormState({
-        name: "",
-        email: "",
-        subject: "",
-        message: "",
-      })
+    // Create mailto URL
+    const recipient = "vyuapp@proton.me";
+    const subject = encodeURIComponent(formState.subject);
+    const body = encodeURIComponent(
+      `Name: ${formState.name}\nEmail: ${formState.email}\n\nMessage:\n${formState.message}`
+    );
+    const mailtoUrl = `mailto:${recipient}?subject=${subject}&body=${body}`;
 
-      // Reset success message after 5 seconds
-      setTimeout(() => {
-        setFormStatus("idle")
-      }, 5000)
-    } catch (error) {
-      setFormStatus("error")
-    }
-  }
+    // Open email client
+    window.location.href = mailtoUrl;
+
+    // Show success message and reset form
+    setFormStatus("success");
+    setFormState({
+      name: "",
+      email: "",
+      subject: "",
+      message: "",
+    });
+
+    // Reset status after 5 seconds
+    setTimeout(() => {
+      setFormStatus("idle");
+    }, 5000);
+  };
 
   return (
     <section id="contact" className="py-16 md:py-24 bg-muted/50">
@@ -60,10 +66,12 @@ export function ContactSection() {
             <div className="inline-block rounded-lg bg-primary px-3 py-1 text-sm text-primary-foreground">
               Contact Us
             </div>
-            <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">Get in Touch</h2>
+            <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">
+              Get in Touch
+            </h2>
             <p className="max-w-[900px] text-muted-foreground md:text-xl">
-              Have a project in mind? We'd love to hear from you. Reach out to us and let's create something amazing
-              together.
+              Have a project in mind? We'd love to hear from you. Reach out to
+              us and let's craft your vision together.
             </p>
           </div>
         </div>
@@ -82,7 +90,11 @@ export function ContactSection() {
               </div>
               <div>
                 <h3 className="text-lg font-bold">Our Location</h3>
-                <p className="text-muted-foreground">123 Innovation Drive, Tech City, TC 12345</p>
+                <p className="text-muted-foreground">
+                  Perum Griya Mutiara Rancabango Blok C.40 Desa. Rancabango
+                  Kecamatan Tarogong Kaler Kabupaten Garut Jawa Barat, Indonesia
+                  44151
+                </p>
               </div>
             </div>
             <div className="flex items-start space-x-4">
@@ -91,7 +103,7 @@ export function ContactSection() {
               </div>
               <div>
                 <h3 className="text-lg font-bold">Email Us</h3>
-                <p className="text-muted-foreground">info@vyuapp.com</p>
+                <p className="text-muted-foreground">vyuapp@proton.me</p>
               </div>
             </div>
             <div className="flex items-start space-x-4">
@@ -100,16 +112,16 @@ export function ContactSection() {
               </div>
               <div>
                 <h3 className="text-lg font-bold">Call Us</h3>
-                <p className="text-muted-foreground">+1 (555) 123-4567</p>
+                <p className="text-muted-foreground">+62 (838) 2137-3804</p>
               </div>
             </div>
             <div className="rounded-lg border bg-background p-6 shadow-sm">
               <h3 className="text-lg font-bold mb-2">Office Hours</h3>
               <div className="grid grid-cols-2 gap-2 text-sm">
                 <div>Monday - Friday</div>
-                <div>9:00 AM - 6:00 PM</div>
+                <div>9:00 AM - 4:00 PM</div>
                 <div>Saturday</div>
-                <div>10:00 AM - 4:00 PM</div>
+                <div>10:00 AM - 2:00 PM</div>
                 <div>Sunday</div>
                 <div>Closed</div>
               </div>
@@ -127,18 +139,11 @@ export function ContactSection() {
               {formStatus === "success" && (
                 <Alert className="bg-green-50 text-green-800 border-green-200">
                   <CheckCircle2 className="h-4 w-4 text-green-600" />
-                  <AlertTitle>Success!</AlertTitle>
+                  <AlertTitle>Ready to Send!</AlertTitle>
                   <AlertDescription>
-                    Your message has been sent successfully. We'll get back to you soon.
+                    Your email client has been opened. Please review and send
+                    the email.
                   </AlertDescription>
-                </Alert>
-              )}
-
-              {formStatus === "error" && (
-                <Alert variant="destructive">
-                  <AlertCircle className="h-4 w-4" />
-                  <AlertTitle>Error</AlertTitle>
-                  <AlertDescription>There was a problem sending your message. Please try again.</AlertDescription>
                 </Alert>
               )}
 
@@ -188,13 +193,13 @@ export function ContactSection() {
                   required
                 />
               </div>
-              <Button type="submit" className="w-full" disabled={formStatus === "submitting"}>
-                {formStatus === "submitting" ? "Sending..." : "Send Message"}
+              <Button type="submit" className="w-full">
+                Send Message
               </Button>
             </form>
           </motion.div>
         </div>
       </div>
     </section>
-  )
+  );
 }

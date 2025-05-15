@@ -22,51 +22,17 @@ export function TeamSection() {
   const team: TeamMember[] = [
     {
       id: 1,
-      name: "Alex Morgan",
-      role: "Founder & CEO",
-      bio: "With over 15 years of experience in tech, Alex leads our vision and strategy.",
-      image: "/placeholder.svg?height=400&width=400",
+      name: "Firman Firdaus",
+      role: "Fullstack Developer",
+      bio: "Crafting every vision in my digital realm world.",
+      image: "/images/team/firman.jpeg?height=400&width=400",
       social: {
         twitter: "#",
         linkedin: "#",
         github: "#",
       },
     },
-    {
-      id: 2,
-      name: "Jamie Taylor",
-      role: "CTO",
-      bio: "Jamie oversees our technical direction and ensures we stay at the cutting edge.",
-      image: "/placeholder.svg?height=400&width=400",
-      social: {
-        twitter: "#",
-        linkedin: "#",
-        github: "#",
-      },
-    },
-    {
-      id: 3,
-      name: "Sam Rivera",
-      role: "Lead Designer",
-      bio: "Sam brings creativity and user-centered design principles to all our projects.",
-      image: "/placeholder.svg?height=400&width=400",
-      social: {
-        twitter: "#",
-        linkedin: "#",
-      },
-    },
-    {
-      id: 4,
-      name: "Jordan Lee",
-      role: "Senior Developer",
-      bio: "Jordan specializes in building scalable and performant web applications.",
-      image: "/placeholder.svg?height=400&width=400",
-      social: {
-        linkedin: "#",
-        github: "#",
-      },
-    },
-  ]
+  ];
 
   const containerVariants = {
     hidden: { opacity: 0 },
@@ -76,7 +42,7 @@ export function TeamSection() {
         staggerChildren: 0.1,
       },
     },
-  }
+  };
 
   const itemVariants = {
     hidden: { y: 20, opacity: 0 },
@@ -87,25 +53,28 @@ export function TeamSection() {
         duration: 0.5,
       },
     },
-  }
+  };
 
   return (
     <section id="team" className="py-16 md:py-24">
       <div className="container px-4 md:px-6">
         <div className="flex flex-col items-center justify-center space-y-4 text-center mb-12">
           <div className="space-y-2">
-            <div className="inline-block rounded-lg bg-primary px-3 py-1 text-sm text-primary-foreground">Our Team</div>
+            <div className="inline-block rounded-lg bg-primary px-3 py-1 text-sm text-primary-foreground">
+              Our Team
+            </div>
             <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">
               Meet the Experts Behind VyuApp
             </h2>
             <p className="max-w-[900px] text-muted-foreground md:text-xl">
-              Our talented team brings together diverse skills and experiences to deliver exceptional results.
+              Our talented team brings together diverse skills and experiences
+              to deliver exceptional results.
             </p>
           </div>
         </div>
 
         <motion.div
-          className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4"
+          className="flex justify-center"
           variants={containerVariants}
           initial="hidden"
           whileInView="visible"
@@ -114,7 +83,7 @@ export function TeamSection() {
           {team.map((member) => (
             <motion.div
               key={member.id}
-              className="group relative overflow-hidden rounded-lg border bg-background shadow-sm hover:shadow-md transition-all"
+              className="group relative overflow-hidden rounded-lg border bg-background shadow-sm hover:shadow-md transition-all max-w-sm"
               variants={itemVariants}
             >
               <div className="aspect-square overflow-hidden">
@@ -174,5 +143,5 @@ export function TeamSection() {
         </motion.div>
       </div>
     </section>
-  )
+  );
 }

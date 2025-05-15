@@ -15,13 +15,11 @@ export default function Home() {
       <main className="flex-1">
         <HeroSection />
         <FeaturesSection />
-        <StatsSection />
         <PortfolioSection />
-        <TestimonialsSection />
         <TeamSection />
         <ContactSection />
       </main>
       <SiteFooter />
     </div>
-  )
+  );
 }

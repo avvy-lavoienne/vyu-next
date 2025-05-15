@@ -1,9 +1,10 @@
-"use client"
+"use client";
 
-import { Button } from "@/components/ui/button"
-import Link from "next/link"
-import { motion } from "framer-motion"
-import { ArrowRight } from "lucide-react"
+import { Button } from "@/components/ui/button";
+import Link from "next/link";
+import Image from "next/image";
+import { motion } from "framer-motion";
+import { ArrowRight } from "lucide-react";
 
 export function HeroSection() {
   return (
@@ -25,8 +26,9 @@ export function HeroSection() {
                 Innovative Technology Solutions for Modern Businesses
               </h1>
               <p className="max-w-[600px] text-muted-foreground md:text-xl">
-                VyuApp delivers cutting-edge web applications and digital experiences that transform how businesses
-                operate in the digital landscape.
+                We delivers cutting-edge web applications and digital
+                experiences, and craft every of your beautiful vision into our
+                digital realm.
               </p>
             </div>
             <div className="flex flex-col gap-2 min-[400px]:flex-row">
@@ -48,19 +50,17 @@ export function HeroSection() {
             transition={{ duration: 0.5, delay: 0.2 }}
           >
             <div className="relative w-full aspect-video overflow-hidden rounded-xl border bg-background shadow-xl">
-              <div className="absolute inset-0 bg-gradient-to-br from-primary/20 via-primary/10 to-background"></div>
-              <div className="absolute inset-0 flex items-center justify-center">
-                <div className="grid grid-cols-2 gap-4 p-4">
-                  <div className="h-24 rounded-lg bg-primary/20 backdrop-blur-sm"></div>
-                  <div className="h-24 rounded-lg bg-primary/10 backdrop-blur-sm"></div>
-                  <div className="h-24 rounded-lg bg-primary/10 backdrop-blur-sm"></div>
-                  <div className="h-24 rounded-lg bg-primary/20 backdrop-blur-sm"></div>
-                </div>
-              </div>
+              <Image
+                src="/images/hero.jpg"
+                alt="Innovative technology solutions with React and Next.js"
+                fill
+                className="object-cover"
+                priority
+              />
             </div>
           </motion.div>
         </div>
       </div>
     </section>
-  )
+  );
 }
