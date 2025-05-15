@@ -7,43 +7,55 @@ import { Button } from "@/components/ui/button"
 import { Menu, X } from "lucide-react"
 import { cn } from "@/lib/utils"
 import { Logo } from "@/components/logo"
+import Image from "next/image";
 
 export function SiteHeader() {
-  const [isScrolled, setIsScrolled] = useState(false)
-  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
+  const [isScrolled, setIsScrolled] = useState(false);
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
-      setIsScrolled(window.scrollY > 10)
-    }
+      setIsScrolled(window.scrollY > 10);
+    };
 
-    window.addEventListener("scroll", handleScroll)
-    return () => window.removeEventListener("scroll", handleScroll)
-  }, [])
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   const toggleMobileMenu = () => {
-    setIsMobileMenuOpen(!isMobileMenuOpen)
-  }
+    setIsMobileMenuOpen(!isMobileMenuOpen);
+  };
 
   const navItems = [
     { href: "#features", label: "Features" },
     { href: "#portfolio", label: "Portfolio" },
     { href: "#team", label: "Team" },
     { href: "#contact", label: "Contact" },
-  ]
+  ];
 
   return (
     <header
       className={cn(
         "fixed top-0 w-full z-50 transition-all duration-300",
-        isScrolled ? "bg-background/80 backdrop-blur-md shadow-sm" : "bg-transparent",
+        isScrolled
+          ? "bg-background/80 backdrop-blur-md shadow-sm"
+          : "bg-transparent"
       )}
     >
       <div className="container flex h-16 items-center justify-between py-4">
         <div className="flex items-center gap-6">
           <Link href="/" className="flex items-center space-x-2">
-            <Logo className="h-8 w-auto" />
-            <span className="font-bold text-xl hidden sm:inline-block">VyuApp</span>
+            <Image
+              src="/images/logo.jpeg"
+              alt="VyuApp Logo"
+              width={32}
+              height={32}
+              className="w-auto h-8"
+              priority
+            />
+            <span className="font-bold text-xl hidden sm:inline-block">
+              VyuApp
+            </span>
           </Link>
           <nav className="hidden md:flex gap-6">
             {navItems.map((item) => (
@@ -62,8 +74,18 @@ export function SiteHeader() {
           <Button asChild className="hidden md:flex">
             <Link href="#contact">Get Started</Link>
           </Button>
-          <Button variant="ghost" size="icon" className="md:hidden" onClick={toggleMobileMenu} aria-label="Toggle menu">
-            {isMobileMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
+          <Button
+            variant="ghost"
+            size="icon"
+            className="md:hidden"
+            onClick={toggleMobileMenu}
+            aria-label="Toggle menu"
+          >
+            {isMobileMenuOpen ? (
+              <X className="h-6 w-6" />
+            ) : (
+              <Menu className="h-6 w-6" />
+            )}
           </Button>
         </div>
       </div>
@@ -90,5 +112,5 @@ export function SiteHeader() {
         </div>
       )}
     </header>
-  )
+  );
 }
