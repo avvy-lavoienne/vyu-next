@@ -27,20 +27,28 @@ export function PortfolioSection() {
   const projects: Project[] = [
     {
       id: 1,
-      title: "E-Commerce Platform",
-      description: "A modern e-commerce solution with advanced filtering and payment processing.",
-      image: "/placeholder.svg?height=600&width=800",
-      categories: ["web", "ecommerce"],
-      technologies: ["Next.js", "React", "Tailwind CSS", "Stripe"],
-      demoUrl: "#",
+      title: "Sellica",
+      description:
+        "Sistem Evaluasi Laporan Lengkap Individu dan Catatan Aktivitas",
+      image: "/images/project/sellica.jpeg?height=600&width=800",
+      categories: ["web", "mobile"],
+      technologies: [
+        "Next.js",
+        "React",
+        "Tailwind CSS",
+        "Radix UI",
+        "Supabase",
+      ],
+      demoUrl: "https://sellica.vyuapp.me",
       githubUrl: "#",
       longDescription:
-        "A comprehensive e-commerce platform built with Next.js and React. Features include product filtering, user authentication, shopping cart functionality, and secure payment processing with Stripe. The platform is fully responsive and optimized for all devices.",
+        "A comprehensive web app platform built with Next.js and React. Features include interactive LineChart, user authentication, recapitulation form and documentation upload. The platform is fully responsive and optimized for all devices.",
     },
     {
       id: 2,
       title: "Healthcare Dashboard",
-      description: "Interactive dashboard for healthcare providers to monitor patient data.",
+      description:
+        "Interactive dashboard for healthcare providers to monitor patient data.",
       image: "/placeholder.svg?height=600&width=800",
       categories: ["web", "dashboard"],
       technologies: ["React", "D3.js", "TypeScript", "Firebase"],
@@ -52,7 +60,8 @@ export function PortfolioSection() {
     {
       id: 3,
       title: "Finance Management App",
-      description: "Personal finance tracker with budgeting tools and expense analytics.",
+      description:
+        "Personal finance tracker with budgeting tools and expense analytics.",
       image: "/placeholder.svg?height=600&width=800",
       categories: ["mobile", "finance"],
       technologies: ["React Native", "Redux", "Node.js", "MongoDB"],
@@ -64,7 +73,8 @@ export function PortfolioSection() {
     {
       id: 4,
       title: "Real Estate Marketplace",
-      description: "Property listing platform with advanced search and virtual tours.",
+      description:
+        "Property listing platform with advanced search and virtual tours.",
       image: "/placeholder.svg?height=600&width=800",
       categories: ["web", "marketplace"],
       technologies: ["Next.js", "Three.js", "PostgreSQL", "AWS"],
@@ -76,7 +86,8 @@ export function PortfolioSection() {
     {
       id: 5,
       title: "Learning Management System",
-      description: "Educational platform for course creation, enrollment, and progress tracking.",
+      description:
+        "Educational platform for course creation, enrollment, and progress tracking.",
       image: "/placeholder.svg?height=600&width=800",
       categories: ["web", "education"],
       technologies: ["React", "GraphQL", "Node.js", "MongoDB"],
@@ -88,7 +99,8 @@ export function PortfolioSection() {
     {
       id: 6,
       title: "Fitness Tracking App",
-      description: "Mobile application for workout planning and progress monitoring.",
+      description:
+        "Mobile application for workout planning and progress monitoring.",
       image: "/placeholder.svg?height=600&width=800",
       categories: ["mobile", "health"],
       technologies: ["Flutter", "Firebase", "TensorFlow", "Google Fit API"],
@@ -97,7 +109,7 @@ export function PortfolioSection() {
       longDescription:
         "A feature-rich fitness tracking application that helps users plan workouts, track progress, and achieve fitness goals. Built with Flutter for cross-platform support, it integrates with Google Fit API for health data and uses TensorFlow for exercise form analysis. Firebase provides authentication and real-time data synchronization.",
     },
-  ]
+  ];
 
   const categories = [
     { value: "all", label: "All" },
