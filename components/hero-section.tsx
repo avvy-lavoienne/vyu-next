@@ -51,7 +51,7 @@ export function HeroSection() {
           >
             <div className="relative w-full aspect-video overflow-hidden rounded-xl border bg-background shadow-xl">
               <Image
-                src="/images/hero.jpg"
+                src="/images/hero.jpeg"
                 alt="Innovative technology solutions with React and Next.js"
                 fill
                 className="object-cover"
