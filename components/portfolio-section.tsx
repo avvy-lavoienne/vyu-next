@@ -46,25 +46,36 @@ export function PortfolioSection() {
     },
     {
       id: 2,
-      title: "Healthcare Dashboard",
+      title: "Vyu-Flow",
       description:
-        "Interactive dashboard for healthcare providers to monitor patient data.",
-      image: "/placeholder.svg?height=600&width=800",
+        "Interactive dashboard for managing project workflow.",
+      image: "/images/project/vyu-flow.jpeg?height=600&width=800",
       categories: ["web", "dashboard"],
-      technologies: ["React", "D3.js", "TypeScript", "Firebase"],
-      demoUrl: "#",
+      technologies: [
+        "Next.js",
+        "React",
+        "Tailwind CSS",
+        "Supabase",
+      ],
+      demoUrl: "https://vyu-flow.vyuapp.me",
       githubUrl: "#",
       longDescription:
-        "An interactive dashboard designed for healthcare providers to monitor patient data in real-time. Built with React and TypeScript, it features interactive charts and visualizations powered by D3.js. The application uses Firebase for real-time data synchronization and authentication.",
+                "An advanced project workflow management dashboard that streamlines team collaboration and project tracking. Built with Next.js and React, featuring interactive task boards, real-time project monitoring, and team performance analytics. The platform integrates with Supabase for seamless data management and real-time synchronization, while Tailwind CSS provides a clean, responsive interface optimized for all devices and team workflows.",
     },
     {
       id: 3,
-      title: "Finance Management App",
+      title: "Vyu-PDF",
       description:
         "Personal finance tracker with budgeting tools and expense analytics.",
-      image: "/placeholder.svg?height=600&width=800",
-      categories: ["mobile", "finance"],
-      technologies: ["React Native", "Redux", "Node.js", "MongoDB"],
+      image: "/images/project/vyu-pdf.jpeg?height=600&width=800",
+      categories: ["Web", "dashboard"],
+      technologies: [
+        "Next.js",
+        "React",
+        "Tailwind CSS",
+        "Clerk",
+        "Ghostscript"
+      ],
       demoUrl: "#",
       githubUrl: "#",
       longDescription:

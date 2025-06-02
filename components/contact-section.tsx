@@ -91,6 +91,7 @@ export function ContactSection() {
               <div>
                 <h3 className="text-lg font-bold">Our Location</h3>
                 <p className="text-muted-foreground">
+                  Jl. Ratu Indah Dewata,
                   Perum Griya Mutiara Rancabango Blok C.40 Desa. Rancabango
                   Kecamatan Tarogong Kaler Kabupaten Garut Jawa Barat, Indonesia
                   44151
@@ -112,7 +113,7 @@ export function ContactSection() {
               </div>
               <div>
                 <h3 className="text-lg font-bold">Call Us</h3>
-                <p className="text-muted-foreground">+62 (838) 2137-3804</p>
+                <p className="text-muted-foreground">+62 (819) 3298-9898</p>
               </div>
             </div>
             <div className="rounded-lg border bg-background p-6 shadow-sm">
