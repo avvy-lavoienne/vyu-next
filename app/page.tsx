@@ -9,8 +9,6 @@ import { SiteFooter } from "@/components/site-footer";
 import { TestimonialsSection } from "@/components/testimonials-section";
 import { StatsSection } from "@/components/stats-section";
 
-const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://vyuapp.com";
-
 export const metadata: Metadata = {
   title: "VyuApp - Innovative Technology Solutions | Web & Mobile Development",
   description:
@@ -27,9 +25,6 @@ export const metadata: Metadata = {
     "custom web applications",
     "technology consulting",
   ],
-  alternates: {
-    canonical: siteUrl,
-  },
 };
 
 export default function Home() {
