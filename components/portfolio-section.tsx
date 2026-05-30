@@ -134,28 +134,32 @@ export function PortfolioSection() {
     filter === "all" ? projects : projects.filter((project) => project.categories.includes(filter))
 
   return (
-    <section id="portfolio" className="py-16 md:py-24">
+    <section id="portfolio" className="py-24 md:py-32 bg-background">
       <div className="container px-4 md:px-6">
-        <div className="flex flex-col items-center justify-center space-y-4 text-center mb-12">
-          <div className="space-y-2">
-            <div className="inline-block rounded-lg bg-primary px-3 py-1 text-sm text-primary-foreground">
+        <div className="flex flex-col items-center justify-center space-y-6 text-center mb-16">
+          <div className="space-y-4">
+            <div className="inline-block rounded-md bg-accent-light px-3 py-1 text-sm text-accent font-medium">
               Portfolio
             </div>
-            <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">Our Latest Projects</h2>
-            <p className="max-w-[900px] text-muted-foreground md:text-xl">
+            <h2 className="text-4xl font-bold tracking-tight sm:text-5xl text-text-primary">Our Latest Projects</h2>
+            <p className="max-w-[900px] text-lg text-text-secondary">
               Explore our recent work and see how we've helped businesses transform their digital presence.
             </p>
           </div>
         </div>
 
-        <div className="flex flex-wrap justify-center gap-2 mb-8">
+        <div className="flex flex-wrap justify-center gap-3 mb-12">
           {categories.map((category) => (
             <Button
               key={category.value}
               variant={filter === category.value ? "default" : "outline"}
               size="sm"
               onClick={() => setFilter(category.value)}
-              className="mb-2"
+              className={`mb-2 h-10 px-6 rounded-md font-semibold transition-all ${
+                filter === category.value
+                  ? "bg-primary hover:bg-primary-hover text-white shadow-elevation-1"
+                  : "bg-surface border border-border text-text-primary hover:border-primary/50"
+              }`}
             >
               {category.label}
             </Button>
@@ -179,9 +183,9 @@ export function PortfolioSection() {
                 animate={{ opacity: 1, y: 0 }}
                 exit={{ opacity: 0, y: 20 }}
                 transition={{ duration: 0.5 }}
-                className="group relative overflow-hidden rounded-lg border bg-background shadow-sm hover:shadow-md transition-all"
+                className="group relative overflow-hidden rounded-lg border border-border bg-surface shadow-elevation-1 hover:shadow-elevation-2 transition-all"
               >
-                <div className="aspect-video overflow-hidden">
+                <div className="aspect-video overflow-hidden bg-background">
                   <Image
                     src={project.image || "/placeholder.svg"}
                     alt={project.title}
@@ -190,12 +194,12 @@ export function PortfolioSection() {
                     className="h-full w-full object-cover transition-transform duration-300 group-hover:scale-105"
                   />
                 </div>
-                <div className="p-6">
-                  <h3 className="text-xl font-bold">{project.title}</h3>
-                  <p className="mt-2 text-muted-foreground">{project.description}</p>
+                <div className="p-6 border-t border-border">
+                  <h3 className="text-lg font-bold text-text-primary">{project.title}</h3>
+                  <p className="mt-2 text-sm text-text-secondary">{project.description}</p>
                   <div className="mt-4 flex flex-wrap gap-2">
                     {project.technologies.slice(0, 3).map((tech, index) => (
-                      <Badge key={index} variant="secondary">
+                      <Badge key={index} variant="secondary" className="bg-accent-light text-accent text-xs">
                         {tech}
                       </Badge>
                     ))}

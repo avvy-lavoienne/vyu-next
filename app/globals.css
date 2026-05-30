@@ -1,51 +1,120 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=JetBrains+Mono:wght@400;500&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 @layer base {
+  * {
+    font-family: 'DM Sans', sans-serif;
+  }
+
+  code, pre {
+    font-family: 'JetBrains Mono', monospace;
+  }
+
   :root {
-    --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
+    /* Crypto Blue - Primary */
+    --primary: 216 100% 50.2%;  /* #0052FF */
+    --primary-hover: 216 100% 39.6%; /* #003ECB */
+    --primary-foreground: 0 0% 100%;
+
+    /* Accent - Elegant Soft Lavender */
+    --accent: 275 45.5% 69%;  /* #B49FCC */
+    --accent-foreground: 0 0% 100%;
+    --accent-light: 275 50% 96.1%; /* #F5F0FA */
+
+    /* Neutrals */
+    --secondary: 216.7 10.3% 35.7%; /* #5B616E */
+    --secondary-foreground: 0 0% 100%;
+    --neutral: 219.1 8.3% 61.8%; /* #8A919E */
+    --neutral-foreground: 0 0% 100%;
+    --text-primary: 206.7 100% 5.3%; /* #050F1A */
+    --text-secondary: 216.7 10.3% 35.7%; /* #5B616E */
+    --background: 0 0% 97.6%; /* #F9FAFB */
+    --foreground: 206.7 100% 5.3%; /* #050F1A */
+    --surface: 0 0% 100%; /* #FFFFFF */
+    --border: 0 0% 82%; /* #D1D5DB */
+
+    /* Status Colors */
+    --success: 158 72.5% 32.4%; /* #05B169 */
+    --warning: 38.3 79.4% 52.9%; /* #F0AD4E */
+    --error: 358.5 73.9% 50.4%; /* #DF2935 */
+
+    /* Legacy CSS vars for compatibility */
     --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
+    --card-foreground: 206.7 100% 5.3%;
     --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
-    --primary: 221.2 83.2% 53.3%;
-    --primary-foreground: 210 40% 98%;
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 221.2 83.2% 53.3%;
+    --popover-foreground: 206.7 100% 5.3%;
+    --muted: 0 0% 97.6%;
+    --muted-foreground: 216.7 10.3% 35.7%;
+    --destructive: 358.5 73.9% 50.4%;
+    --destructive-foreground: 0 0% 100%;
+    --input: 0 0% 82%;
+    --ring: 216 100% 50.2%;
     --radius: 0.5rem;
   }
 
   .dark {
-    --background: 222.2 84% 4.9%;
-    --foreground: 210 40% 98%;
-    --card: 222.2 84% 4.9%;
-    --card-foreground: 210 40% 98%;
-    --popover: 222.2 84% 4.9%;
-    --popover-foreground: 210 40% 98%;
-    --primary: 217.2 91.2% 59.8%;
-    --primary-foreground: 222.2 47.4% 11.2%;
-    --secondary: 217.2 32.6% 17.5%;
-    --secondary-foreground: 210 40% 98%;
-    --muted: 217.2 32.6% 17.5%;
-    --muted-foreground: 215 20.2% 65.1%;
-    --accent: 217.2 32.6% 17.5%;
-    --accent-foreground: 210 40% 98%;
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 210 40% 98%;
-    --border: 217.2 32.6% 17.5%;
-    --input: 217.2 32.6% 17.5%;
-    --ring: 224.3 76.3% 48%;
+    /* Crypto Blue - Dark Mode */
+    --primary: 216 100% 50.2%;  /* #0052FF */
+    --primary-hover: 216 100% 39.6%; /* #003ECB */
+    --primary-foreground: 0 0% 100%;
+
+    /* Accent - Elegant Soft Lavender */
+    --accent: 275 45.5% 69%;  /* #B49FCC */
+    --accent-foreground: 0 0% 100%;
+    --accent-light: 275 50% 15%; /* #2D1F3D */
+
+    /* Neutrals - Dark Mode */
+    --secondary: 220 13% 50%; /* #6B7280 */
+    --secondary-foreground: 0 0% 100%;
+    --neutral: 220 13% 40%; /* #4B5563 */
+    --neutral-foreground: 0 0% 100%;
+    --text-primary: 0 0% 100%; /* #FFFFFF */
+    --text-secondary: 220 13% 70%; /* #9CA3AF */
+    --background: 217.2 32.6% 15%; /* #1A202C */
+    --foreground: 0 0% 100%;
+    --surface: 217.2 32.6% 20%; /* #2D3748 */
+    --border: 217.2 32.6% 25%; /* #4A5568 */
+
+    /* Status Colors - Dark Mode */
+    --success: 158 72.5% 45%; /* #10B981 */
+    --warning: 38.3 79.4% 60%; /* #FBBF24 */
+    --error: 358.5 73.9% 60%; /* #F87171 */
+
+    /* Legacy CSS vars */
+    --card: 217.2 32.6% 20%;
+    --card-foreground: 0 0% 100%;
+    --popover: 217.2 32.6% 20%;
+    --popover-foreground: 0 0% 100%;
+    --muted: 217.2 32.6% 25%;
+    --muted-foreground: 220 13% 70%;
+    --destructive: 358.5 73.9% 60%;
+    --destructive-foreground: 0 0% 100%;
+    --input: 217.2 32.6% 25%;
+    --ring: 216 100% 50.2%;
+  }
+
+  /* Elevation shadows */
+  .elevation-0 {
+    box-shadow: none;
+  }
+
+  .elevation-1 {
+    box-shadow: 0 1px 3px rgba(5, 15, 26, 0.06);
+  }
+
+  .elevation-2 {
+    box-shadow: 0 4px 12px rgba(5, 15, 26, 0.08);
+  }
+
+  .elevation-3 {
+    box-shadow: 0 12px 24px rgba(5, 15, 26, 0.12);
+  }
+
+  html {
+    scroll-behavior: smooth;
   }
 }
 

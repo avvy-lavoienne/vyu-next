@@ -59,38 +59,37 @@ export function ContactSection() {
   };
 
   return (
-    <section id="contact" className="py-16 md:py-24 bg-muted/50">
+    <section id="contact" className="py-24 md:py-32 bg-accent-light/20">
       <div className="container px-4 md:px-6">
-        <div className="flex flex-col items-center justify-center space-y-4 text-center mb-12">
-          <div className="space-y-2">
-            <div className="inline-block rounded-lg bg-primary px-3 py-1 text-sm text-primary-foreground">
+        <div className="flex flex-col items-center justify-center space-y-6 text-center mb-16">
+          <div className="space-y-4">
+            <div className="inline-block rounded-md bg-accent-light px-3 py-1 text-sm text-accent font-medium">
               Contact Us
             </div>
-            <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">
+            <h2 className="text-4xl font-bold tracking-tight sm:text-5xl text-text-primary">
               Get in Touch
             </h2>
-            <p className="max-w-[900px] text-muted-foreground md:text-xl">
-              Have a project in mind? We'd love to hear from you. Reach out to
-              us and let's craft your vision together.
+            <p className="max-w-[900px] text-lg text-text-secondary">
+              Have a project in mind? We'd love to hear from you. Reach out to us and let's craft your vision together.
             </p>
           </div>
         </div>
 
-        <div className="grid gap-8 md:grid-cols-2">
+        <div className="grid gap-12 md:grid-cols-2">
           <motion.div
-            className="space-y-6"
+            className="space-y-8"
             initial={{ opacity: 0, x: -20 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5 }}
           >
             <div className="flex items-start space-x-4">
-              <div className="rounded-full bg-primary/10 p-3 text-primary">
+              <div className="rounded-full bg-accent-light p-3 text-accent">
                 <MapPin className="h-6 w-6" />
               </div>
               <div>
-                <h3 className="text-lg font-bold">Our Location</h3>
-                <p className="text-muted-foreground">
+                <h3 className="text-lg font-bold text-text-primary">Our Location</h3>
+                <p className="text-text-secondary">
                   Jl. Ratu Indah Dewata,
                   Perum Griya Mutiara Rancabango Blok C.40 Desa. Rancabango
                   Kecamatan Tarogong Kaler Kabupaten Garut Jawa Barat, Indonesia
@@ -99,102 +98,105 @@ export function ContactSection() {
               </div>
             </div>
             <div className="flex items-start space-x-4">
-              <div className="rounded-full bg-primary/10 p-3 text-primary">
+              <div className="rounded-full bg-accent-light p-3 text-accent">
                 <Mail className="h-6 w-6" />
               </div>
               <div>
-                <h3 className="text-lg font-bold">Email Us</h3>
-                <p className="text-muted-foreground">vyuapp@proton.me</p>
+                <h3 className="text-lg font-bold text-text-primary">Email Us</h3>
+                <p className="text-text-secondary">vyuapp@proton.me</p>
               </div>
             </div>
             <div className="flex items-start space-x-4">
-              <div className="rounded-full bg-primary/10 p-3 text-primary">
+              <div className="rounded-full bg-accent-light p-3 text-accent">
                 <Phone className="h-6 w-6" />
               </div>
               <div>
-                <h3 className="text-lg font-bold">Call Us</h3>
-                <p className="text-muted-foreground">+62 (819) 3298-9898</p>
+                <h3 className="text-lg font-bold text-text-primary">Call Us</h3>
+                <p className="text-text-secondary">+62 (819) 3298-9898</p>
               </div>
             </div>
-            <div className="rounded-lg border bg-background p-6 shadow-sm">
-              <h3 className="text-lg font-bold mb-2">Office Hours</h3>
-              <div className="grid grid-cols-2 gap-2 text-sm">
-                <div>Monday - Friday</div>
+            <div className="rounded-lg border border-border bg-surface p-6 shadow-elevation-1">
+              <h3 className="text-lg font-bold text-text-primary mb-4">Office Hours</h3>
+              <div className="grid grid-cols-2 gap-2 text-sm text-text-secondary">
+                <div className="font-medium">Monday - Friday</div>
                 <div>9:00 AM - 4:00 PM</div>
-                <div>Saturday</div>
+                <div className="font-medium">Saturday</div>
                 <div>10:00 AM - 2:00 PM</div>
-                <div>Sunday</div>
+                <div className="font-medium">Sunday</div>
                 <div>Closed</div>
               </div>
             </div>
           </motion.div>
 
           <motion.div
-            className="rounded-lg border bg-background p-6 shadow-sm"
+            className="rounded-lg border border-border bg-surface p-8 shadow-elevation-1"
             initial={{ opacity: 0, x: 20 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5 }}
           >
-            <form onSubmit={handleSubmit} className="space-y-4">
+            <form onSubmit={handleSubmit} className="space-y-6">
               {formStatus === "success" && (
-                <Alert className="bg-green-50 text-green-800 border-green-200">
-                  <CheckCircle2 className="h-4 w-4 text-green-600" />
+                <Alert className="bg-success/10 text-success border-success/20">
+                  <CheckCircle2 className="h-4 w-4" />
                   <AlertTitle>Ready to Send!</AlertTitle>
                   <AlertDescription>
-                    Your email client has been opened. Please review and send
-                    the email.
+                    Your email client has been opened. Please review and send the email.
                   </AlertDescription>
                 </Alert>
               )}
 
               <div className="grid gap-2">
-                <Label htmlFor="name">Name</Label>
+                <Label htmlFor="name" className="text-text-primary font-medium">Name</Label>
                 <Input
                   id="name"
                   name="name"
                   placeholder="Your name"
                   value={formState.name}
                   onChange={handleChange}
+                  className="h-11 bg-background border border-border rounded-md px-4 text-text-primary placeholder-text-secondary/50 focus:border-primary focus:ring-2 focus:ring-primary/10 focus:outline-none transition-all"
                   required
                 />
               </div>
               <div className="grid gap-2">
-                <Label htmlFor="email">Email</Label>
+                <Label htmlFor="email" className="text-text-primary font-medium">Email</Label>
                 <Input
                   id="email"
                   name="email"
                   type="email"
-                  placeholder="Your email"
+                  placeholder="your@email.com"
                   value={formState.email}
                   onChange={handleChange}
+                  className="h-11 bg-background border border-border rounded-md px-4 text-text-primary placeholder-text-secondary/50 focus:border-primary focus:ring-2 focus:ring-primary/10 focus:outline-none transition-all"
                   required
                 />
               </div>
               <div className="grid gap-2">
-                <Label htmlFor="subject">Subject</Label>
+                <Label htmlFor="subject" className="text-text-primary font-medium">Subject</Label>
                 <Input
                   id="subject"
                   name="subject"
-                  placeholder="Subject"
+                  placeholder="Project inquiry"
                   value={formState.subject}
                   onChange={handleChange}
+                  className="h-11 bg-background border border-border rounded-md px-4 text-text-primary placeholder-text-secondary/50 focus:border-primary focus:ring-2 focus:ring-primary/10 focus:outline-none transition-all"
                   required
                 />
               </div>
               <div className="grid gap-2">
-                <Label htmlFor="message">Message</Label>
+                <Label htmlFor="message" className="text-text-primary font-medium">Message</Label>
                 <Textarea
                   id="message"
                   name="message"
-                  placeholder="Your message"
+                  placeholder="Tell us about your project..."
                   rows={5}
                   value={formState.message}
                   onChange={handleChange}
+                  className="bg-background border border-border rounded-md px-4 py-3 text-text-primary placeholder-text-secondary/50 focus:border-primary focus:ring-2 focus:ring-primary/10 focus:outline-none transition-all resize-none"
                   required
                 />
               </div>
-              <Button type="submit" className="w-full">
+              <Button type="submit" className="w-full h-11 bg-primary hover:bg-primary-hover text-white font-semibold rounded-md transition-all shadow-elevation-1">
                 Send Message
               </Button>
             </form>

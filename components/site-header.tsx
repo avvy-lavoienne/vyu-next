@@ -38,12 +38,12 @@ export function SiteHeader() {
       className={cn(
         "fixed top-0 w-full z-50 transition-all duration-300",
         isScrolled
-          ? "bg-background/80 backdrop-blur-md shadow-sm"
+          ? "bg-surface/95 backdrop-blur-md shadow-elevation-1 border-b border-border"
           : "bg-transparent"
       )}
     >
       <div className="container flex h-16 items-center justify-between py-4">
-        <div className="flex items-center gap-6">
+        <div className="flex items-center gap-8">
           <Link href="/" className="flex items-center space-x-2">
             <Image
               src="/images/logo.jpeg"
@@ -53,16 +53,16 @@ export function SiteHeader() {
               className="w-auto h-8"
               priority
             />
-            <span className="font-bold text-xl hidden sm:inline-block">
+            <span className="font-bold text-lg hidden sm:inline-block text-text-primary">
               VyuApp
             </span>
           </Link>
-          <nav className="hidden md:flex gap-6">
+          <nav className="hidden md:flex gap-8">
             {navItems.map((item) => (
               <Link
                 key={item.href}
                 href={item.href}
-                className="text-sm font-medium transition-colors hover:text-primary"
+                className="text-sm font-medium text-text-secondary hover:text-primary transition-colors"
               >
                 {item.label}
               </Link>
@@ -71,7 +71,7 @@ export function SiteHeader() {
         </div>
         <div className="flex items-center gap-4">
           <ModeToggle />
-          <Button asChild className="hidden md:flex">
+          <Button asChild className="hidden md:flex h-10 px-6 bg-primary hover:bg-primary-hover text-white font-semibold rounded-md">
             <Link href="#contact">Get Started</Link>
           </Button>
           <Button
@@ -91,13 +91,13 @@ export function SiteHeader() {
       </div>
       {/* Mobile menu */}
       {isMobileMenuOpen && (
-        <div className="md:hidden bg-background border-b">
+        <div className="md:hidden bg-surface border-b border-border">
           <nav className="container flex flex-col py-4">
             {navItems.map((item) => (
               <Link
                 key={item.href}
                 href={item.href}
-                className="py-3 text-base font-medium transition-colors hover:text-primary"
+                className="py-3 text-base font-medium text-text-secondary hover:text-primary transition-colors"
                 onClick={() => setIsMobileMenuOpen(false)}
               >
                 {item.label}

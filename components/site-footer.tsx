@@ -3,95 +3,95 @@ import { Logo } from "@/components/logo"
 
 export function SiteFooter() {
   return (
-    <footer className="border-t bg-muted/50">
-      <div className="container px-4 md:px-6 py-12">
-        <div className="grid gap-8 sm:grid-cols-2 md:grid-cols-4">
+    <footer className="border-t border-border bg-surface">
+      <div className="container px-4 md:px-6 py-16 md:py-20">
+        <div className="grid gap-12 sm:grid-cols-2 md:grid-cols-4">
           <div className="space-y-4">
             <Link href="/" className="flex items-center space-x-2">
               <Logo className="h-6 w-auto" />
-              <span className="font-bold">VyuApp</span>
+              <span className="font-bold text-lg text-text-primary">VyuApp</span>
             </Link>
-            <p className="text-sm text-muted-foreground">
+            <p className="text-sm text-text-secondary leading-relaxed">
               Innovative technology solutions for modern businesses. Building the future, one pixel at a time.
             </p>
           </div>
           <div className="space-y-4">
-            <h3 className="text-sm font-medium">Company</h3>
-            <ul className="space-y-2 text-sm">
+            <h3 className="text-sm font-semibold text-text-primary uppercase tracking-wide">Company</h3>
+            <ul className="space-y-3 text-sm">
               <li>
-                <Link href="#" className="text-muted-foreground hover:text-foreground transition-colors">
+                <Link href="#" className="text-text-secondary hover:text-primary transition-colors">
                   About Us
                 </Link>
               </li>
               <li>
-                <Link href="#" className="text-muted-foreground hover:text-foreground transition-colors">
+                <Link href="#" className="text-text-secondary hover:text-primary transition-colors">
                   Careers
                 </Link>
               </li>
               <li>
-                <Link href="#" className="text-muted-foreground hover:text-foreground transition-colors">
+                <Link href="#" className="text-text-secondary hover:text-primary transition-colors">
                   Blog
                 </Link>
               </li>
               <li>
-                <Link href="#" className="text-muted-foreground hover:text-foreground transition-colors">
+                <Link href="#" className="text-text-secondary hover:text-primary transition-colors">
                   Press
                 </Link>
               </li>
             </ul>
           </div>
           <div className="space-y-4">
-            <h3 className="text-sm font-medium">Services</h3>
-            <ul className="space-y-2 text-sm">
+            <h3 className="text-sm font-semibold text-text-primary uppercase tracking-wide">Services</h3>
+            <ul className="space-y-3 text-sm">
               <li>
-                <Link href="#" className="text-muted-foreground hover:text-foreground transition-colors">
+                <Link href="#" className="text-text-secondary hover:text-primary transition-colors">
                   Web Development
                 </Link>
               </li>
               <li>
-                <Link href="#" className="text-muted-foreground hover:text-foreground transition-colors">
+                <Link href="#" className="text-text-secondary hover:text-primary transition-colors">
                   Mobile Apps
                 </Link>
               </li>
               <li>
-                <Link href="#" className="text-muted-foreground hover:text-foreground transition-colors">
+                <Link href="#" className="text-text-secondary hover:text-primary transition-colors">
                   UI/UX Design
                 </Link>
               </li>
               <li>
-                <Link href="#" className="text-muted-foreground hover:text-foreground transition-colors">
+                <Link href="#" className="text-text-secondary hover:text-primary transition-colors">
                   Consulting
                 </Link>
               </li>
             </ul>
           </div>
           <div className="space-y-4">
-            <h3 className="text-sm font-medium">Legal</h3>
-            <ul className="space-y-2 text-sm">
+            <h3 className="text-sm font-semibold text-text-primary uppercase tracking-wide">Legal</h3>
+            <ul className="space-y-3 text-sm">
               <li>
-                <Link href="#" className="text-muted-foreground hover:text-foreground transition-colors">
+                <Link href="#" className="text-text-secondary hover:text-primary transition-colors">
                   Terms of Service
                 </Link>
               </li>
               <li>
-                <Link href="#" className="text-muted-foreground hover:text-foreground transition-colors">
+                <Link href="#" className="text-text-secondary hover:text-primary transition-colors">
                   Privacy Policy
                 </Link>
               </li>
               <li>
-                <Link href="#" className="text-muted-foreground hover:text-foreground transition-colors">
+                <Link href="#" className="text-text-secondary hover:text-primary transition-colors">
                   Cookie Policy
                 </Link>
               </li>
             </ul>
           </div>
         </div>
-        <div className="mt-12 border-t pt-6 flex flex-col sm:flex-row justify-between items-center">
-          <p className="text-xs text-muted-foreground">
+        <div className="mt-16 pt-8 border-t border-border flex flex-col sm:flex-row justify-between items-center gap-4">
+          <p className="text-xs text-text-secondary">
             &copy; {new Date().getFullYear()} VyuApp. All rights reserved.
           </p>
-          <div className="mt-4 sm:mt-0 flex items-center space-x-4">
-            <Link href="#" className="text-muted-foreground hover:text-foreground transition-colors">
+          <div className="flex items-center space-x-6">
+            <Link href="#" className="text-text-secondary hover:text-primary transition-colors">
               <span className="sr-only">Twitter</span>
               <svg
                 xmlns="http://www.w3.org/2000/svg"

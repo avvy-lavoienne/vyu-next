@@ -61,15 +61,15 @@ export function FeaturesSection() {
   }
 
   return (
-    <section id="features" className="py-16 md:py-24 bg-muted/50">
+    <section id="features" className="py-24 md:py-32 bg-background">
       <div className="container px-4 md:px-6">
-        <div className="flex flex-col items-center justify-center space-y-4 text-center mb-12">
-          <div className="space-y-2">
-            <div className="inline-block rounded-lg bg-primary px-3 py-1 text-sm text-primary-foreground">Features</div>
-            <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">
+        <div className="flex flex-col items-center justify-center space-y-6 text-center mb-16">
+          <div className="space-y-4">
+            <div className="inline-block rounded-md bg-accent-light px-3 py-1 text-sm text-accent font-medium">Features</div>
+            <h2 className="text-4xl font-bold tracking-tight sm:text-5xl text-text-primary">
               Comprehensive Technology Solutions
             </h2>
-            <p className="max-w-[900px] text-muted-foreground md:text-xl">
+            <p className="max-w-[900px] text-lg text-text-secondary">
               We offer a wide range of services to help your business thrive in the digital world.
             </p>
           </div>
@@ -84,13 +84,13 @@ export function FeaturesSection() {
           {features.map((feature, index) => (
             <motion.div
               key={index}
-              className="flex flex-col items-center space-y-4 rounded-lg border p-6 bg-background shadow-sm transition-all hover:shadow-md"
+              className="flex flex-col items-center space-y-4 rounded-lg border border-border p-6 bg-surface shadow-elevation-1 transition-all hover:shadow-elevation-2 hover:border-primary/30"
               variants={itemVariants}
             >
-              <div className="rounded-full bg-primary/10 p-4 text-primary">{feature.icon}</div>
+              <div className="rounded-full bg-accent-light p-4 text-accent">{feature.icon}</div>
               <div className="space-y-2 text-center">
-                <h3 className="text-xl font-bold">{feature.title}</h3>
-                <p className="text-muted-foreground">{feature.description}</p>
+                <h3 className="text-lg font-bold text-text-primary">{feature.title}</h3>
+                <p className="text-sm text-text-secondary leading-relaxed">{feature.description}</p>
               </div>
             </motion.div>
           ))}

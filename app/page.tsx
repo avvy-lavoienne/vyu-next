@@ -10,12 +10,14 @@ import { StatsSection } from "@/components/stats-section"
 
 export default function Home() {
   return (
-    <div className="flex min-h-screen flex-col">
+    <div className="flex min-h-screen flex-col bg-background">
       <SiteHeader />
       <main className="flex-1">
         <HeroSection />
         <FeaturesSection />
+        <StatsSection />
         <PortfolioSection />
+        <TestimonialsSection />
         <TeamSection />
         <ContactSection />
       </main>

@@ -13,9 +13,9 @@ export function StatsSection() {
   ]
 
   return (
-    <section className="py-12 md:py-16 border-y">
+    <section className="py-16 md:py-24 border-t border-border">
       <div className="container px-4 md:px-6">
-        <div className="grid grid-cols-2 gap-6 md:grid-cols-4">
+        <div className="grid grid-cols-2 gap-8 md:grid-cols-4">
           {stats.map((stat, index) => (
             <CounterStat key={index} value={stat.value} label={stat.label} suffix={stat.suffix} />
           ))}
@@ -58,11 +58,11 @@ function CounterStat({ value, label, suffix }: { value: number; label: string; s
       animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
       transition={{ duration: 0.5 }}
     >
-      <div className="text-3xl font-bold sm:text-4xl md:text-5xl">
+      <div className="text-4xl font-bold sm:text-5xl md:text-6xl bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
         {count}
         {suffix}
       </div>
-      <div className="text-sm font-medium text-muted-foreground md:text-base">{label}</div>
+      <div className="text-sm font-medium text-text-secondary md:text-base">{label}</div>
     </motion.div>
   )
 }

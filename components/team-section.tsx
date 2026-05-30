@@ -56,17 +56,17 @@ export function TeamSection() {
   };
 
   return (
-    <section id="team" className="py-16 md:py-24">
+    <section id="team" className="py-24 md:py-32 bg-background">
       <div className="container px-4 md:px-6">
-        <div className="flex flex-col items-center justify-center space-y-4 text-center mb-12">
-          <div className="space-y-2">
-            <div className="inline-block rounded-lg bg-primary px-3 py-1 text-sm text-primary-foreground">
+        <div className="flex flex-col items-center justify-center space-y-6 text-center mb-16">
+          <div className="space-y-4">
+            <div className="inline-block rounded-md bg-accent-light px-3 py-1 text-sm text-accent font-medium">
               Our Team
             </div>
-            <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">
+            <h2 className="text-4xl font-bold tracking-tight sm:text-5xl text-text-primary">
               Meet the Experts Behind VyuApp
             </h2>
-            <p className="max-w-[900px] text-muted-foreground md:text-xl">
+            <p className="max-w-[900px] text-lg text-text-secondary">
               Our talented team brings together diverse skills and experiences
               to deliver exceptional results.
             </p>
@@ -83,10 +83,10 @@ export function TeamSection() {
           {team.map((member) => (
             <motion.div
               key={member.id}
-              className="group relative overflow-hidden rounded-lg border bg-background shadow-sm hover:shadow-md transition-all max-w-sm"
+              className="group relative overflow-hidden rounded-lg border border-border bg-surface shadow-elevation-1 hover:shadow-elevation-2 transition-all max-w-sm"
               variants={itemVariants}
             >
-              <div className="aspect-square overflow-hidden">
+              <div className="aspect-square overflow-hidden bg-background">
                 <Image
                   src={member.image || "/placeholder.svg"}
                   alt={member.name}
@@ -95,9 +95,9 @@ export function TeamSection() {
                   className="h-full w-full object-cover transition-transform duration-300 group-hover:scale-105"
                 />
               </div>
-              <div className="p-6">
-                <h3 className="text-xl font-bold">{member.name}</h3>
-                <p className="text-sm text-primary">{member.role}</p>
+              <div className="p-6 border-t border-border">
+                <h3 className="text-lg font-bold text-text-primary">{member.name}</h3>
+                <p className="text-sm text-accent font-medium">{member.role}</p>
                 <p className="mt-2 text-muted-foreground">{member.bio}</p>
                 <div className="mt-4 flex space-x-2">
                   {member.social.twitter && (

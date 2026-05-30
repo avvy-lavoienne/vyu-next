@@ -65,15 +65,15 @@ export function TestimonialsSection() {
   }, [autoplay, next])
 
   return (
-    <section className="py-16 md:py-24 bg-muted/50">
+    <section className="py-24 md:py-32 bg-accent-light/30">
       <div className="container px-4 md:px-6">
-        <div className="flex flex-col items-center justify-center space-y-4 text-center mb-12">
-          <div className="space-y-2">
-            <div className="inline-block rounded-lg bg-primary px-3 py-1 text-sm text-primary-foreground">
+        <div className="flex flex-col items-center justify-center space-y-6 text-center mb-16">
+          <div className="space-y-4">
+            <div className="inline-block rounded-md bg-accent-light px-3 py-1 text-sm text-accent font-medium">
               Testimonials
             </div>
-            <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">What Our Clients Say</h2>
-            <p className="max-w-[900px] text-muted-foreground md:text-xl">
+            <h2 className="text-4xl font-bold tracking-tight sm:text-5xl text-text-primary">What Our Clients Say</h2>
+            <p className="max-w-[900px] text-lg text-text-secondary">
               Don't just take our word for it. Hear from some of our satisfied clients.
             </p>
           </div>
@@ -92,9 +92,9 @@ export function TestimonialsSection() {
                 animate={{ opacity: 1 }}
                 exit={{ opacity: 0 }}
                 transition={{ duration: 0.5 }}
-                className="relative rounded-xl border bg-background p-6 shadow-sm md:p-8"
+                className="relative rounded-lg border border-border bg-surface p-6 shadow-elevation-1 md:p-8"
               >
-                <Quote className="absolute right-6 top-6 h-10 w-10 text-primary/10" />
+                <Quote className="absolute right-6 top-6 h-10 w-10 text-accent/20" />
                 <div className="flex flex-col items-center text-center">
                   <div className="mb-4 h-16 w-16 overflow-hidden rounded-full border-2 border-primary">
                     <Image
