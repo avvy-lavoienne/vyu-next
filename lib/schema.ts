@@ -3,7 +3,7 @@
  * Generates JSON-LD structured data for search engines
  */
 
-const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://vyuapp.com'
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || ''
 
 export const generateOrganizationSchema = () => ({
   '@context': 'https://schema.org',

@@ -1,6 +1,6 @@
 import { MetadataRoute } from 'next'
 
-const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://vyuapp.com'
+const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || ''
 
 export async function GET(): Promise<Response> {
   const rss = `<?xml version="1.0" encoding="UTF-8"?>

@@ -16,24 +16,15 @@ const jetbrainsMono = JetBrains_Mono({
   variable: "--font-jetbrains-mono",
 });
 
-// Safely construct the site URL
-const getSiteUrl = () => {
-  if (process.env.NEXT_PUBLIC_SITE_URL) {
-    return process.env.NEXT_PUBLIC_SITE_URL;
-  }
-  // Use a safe fallback that won't break in production
-  return "https://vyuapp.com";
-};
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "";
 
-const siteUrl = getSiteUrl();
-
-// Safely create URL object with error handling
 let metadataBaseUrl;
-try {
-  metadataBaseUrl = new URL(siteUrl);
-} catch (error) {
-  console.warn("Invalid NEXT_PUBLIC_SITE_URL, using default", error);
-  metadataBaseUrl = new URL("https://vyuapp.com");
+if (siteUrl) {
+  try {
+    metadataBaseUrl = new URL(siteUrl);
+  } catch {
+    metadataBaseUrl = undefined;
+  }
 }
 
 export const viewport: Viewport = {

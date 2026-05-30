@@ -12,7 +12,7 @@ Disallow: /*.xml$
 Disallow: /api/
 
 # Sitemap location
-Sitemap: https://vyuapp.com/sitemap.xml
+Sitemap: /sitemap.xml
 
 # Crawl delay (optional - prevents excessive crawling)
 Crawl-delay: 1

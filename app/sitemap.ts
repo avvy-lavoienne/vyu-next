@@ -1,6 +1,6 @@
 import { MetadataRoute } from 'next'
 
-const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://vyuapp.com'
+const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || ''
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const mainRoutes: MetadataRoute.Sitemap = [
