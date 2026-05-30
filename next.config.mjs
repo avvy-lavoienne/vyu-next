@@ -13,10 +13,24 @@ const nextConfig = {
     localPatterns: [
       {
         pathname: "/images/**",
-        search: "?*",
       },
       {
         pathname: "/favicon/**",
+      },
+      {
+        pathname: "/placeholder.svg",
+      },
+      {
+        pathname: "/placeholder-logo.png",
+      },
+      {
+        pathname: "/placeholder-logo.svg",
+      },
+      {
+        pathname: "/placeholder-user.jpg",
+      },
+      {
+        pathname: "/placeholder.jpg",
       },
     ],
     formats: ["image/webp", "image/avif"],
