@@ -1,17 +1,22 @@
 const nextConfig = {
   reactStrictMode: true,
-  eslint: {
-    ignoreDuringBuilds: true,
-  },
   typescript: {
     ignoreBuildErrors: true,
   },
   images: {
-    domains: ["localhost", "vyuapp.com"],
     remotePatterns: [
       {
         protocol: "https",
         hostname: "**",
+      },
+    ],
+    localPatterns: [
+      {
+        pathname: "/images/**",
+        search: "?*",
+      },
+      {
+        pathname: "/favicon/**",
       },
     ],
     formats: ["image/webp", "image/avif"],
