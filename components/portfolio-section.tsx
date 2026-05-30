@@ -141,9 +141,12 @@ export function PortfolioSection() {
             <div className="inline-block rounded-md bg-accent-light px-3 py-1 text-sm text-accent font-medium">
               Portfolio
             </div>
-            <h2 className="text-4xl font-bold tracking-tight sm:text-5xl text-text-primary">Our Latest Projects</h2>
+            <h2 className="text-4xl font-bold tracking-tight sm:text-5xl text-text-primary">
+              Our Latest Projects
+            </h2>
             <p className="max-w-[900px] text-lg text-text-secondary">
-              Explore our recent work and see how we've helped businesses transform their digital presence.
+              Explore our recent work and see how we've helped businesses
+              transform their digital presence.
             </p>
           </div>
         </div>
@@ -188,26 +191,40 @@ export function PortfolioSection() {
                 <div className="aspect-video overflow-hidden bg-background">
                   <Image
                     src={project.image || "/placeholder.svg"}
-                    alt={project.title}
+                    alt={`${project.title} - ${project.description}`}
                     width={800}
                     height={600}
                     className="h-full w-full object-cover transition-transform duration-300 group-hover:scale-105"
+                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                   />
                 </div>
                 <div className="p-6 border-t border-border">
-                  <h3 className="text-lg font-bold text-text-primary">{project.title}</h3>
-                  <p className="mt-2 text-sm text-text-secondary">{project.description}</p>
+                  <h3 className="text-lg font-bold text-text-primary">
+                    {project.title}
+                  </h3>
+                  <p className="mt-2 text-sm text-text-secondary">
+                    {project.description}
+                  </p>
                   <div className="mt-4 flex flex-wrap gap-2">
                     {project.technologies.slice(0, 3).map((tech, index) => (
-                      <Badge key={index} variant="secondary" className="bg-accent-light text-accent text-xs">
+                      <Badge
+                        key={index}
+                        variant="secondary"
+                        className="bg-accent-light text-accent text-xs"
+                      >
                         {tech}
                       </Badge>
                     ))}
                     {project.technologies.length > 3 && (
-                      <Badge variant="outline">+{project.technologies.length - 3}</Badge>
+                      <Badge variant="outline">
+                        +{project.technologies.length - 3}
+                      </Badge>
                     )}
                   </div>
-                  <Button className="mt-4 w-full" onClick={() => setSelectedProject(project)}>
+                  <Button
+                    className="mt-4 w-full"
+                    onClick={() => setSelectedProject(project)}
+                  >
                     View Details
                   </Button>
                 </div>
@@ -216,7 +233,10 @@ export function PortfolioSection() {
           </motion.div>
         </AnimatePresence>
 
-        <Dialog open={!!selectedProject} onOpenChange={(open) => !open && setSelectedProject(null)}>
+        <Dialog
+          open={!!selectedProject}
+          onOpenChange={(open) => !open && setSelectedProject(null)}
+        >
           <DialogContent className="sm:max-w-[700px] max-h-[90vh] overflow-y-auto">
             {selectedProject && (
               <>
@@ -224,7 +244,10 @@ export function PortfolioSection() {
                   <DialogTitle>{selectedProject.title}</DialogTitle>
                   <DialogDescription>
                     {selectedProject.categories
-                      .map((category) => category.charAt(0).toUpperCase() + category.slice(1))
+                      .map(
+                        (category) =>
+                          category.charAt(0).toUpperCase() + category.slice(1),
+                      )
                       .join(" • ")}
                   </DialogDescription>
                 </DialogHeader>
@@ -240,7 +263,9 @@ export function PortfolioSection() {
                 <div className="space-y-4">
                   <p>{selectedProject.longDescription}</p>
                   <div>
-                    <h4 className="text-sm font-medium mb-2">Technologies Used:</h4>
+                    <h4 className="text-sm font-medium mb-2">
+                      Technologies Used:
+                    </h4>
                     <div className="flex flex-wrap gap-2">
                       {selectedProject.technologies.map((tech, index) => (
                         <Badge key={index} variant="secondary">
@@ -251,13 +276,21 @@ export function PortfolioSection() {
                   </div>
                   <div className="flex flex-wrap gap-3">
                     <Button asChild>
-                      <a href={selectedProject.demoUrl} target="_blank" rel="noopener noreferrer">
+                      <a
+                        href={selectedProject.demoUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
                         <ExternalLink className="mr-2 h-4 w-4" />
                         Live Demo
                       </a>
                     </Button>
                     <Button variant="outline" asChild>
-                      <a href={selectedProject.githubUrl} target="_blank" rel="noopener noreferrer">
+                      <a
+                        href={selectedProject.githubUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
                         <Github className="mr-2 h-4 w-4" />
                         Source Code
                       </a>
@@ -270,5 +303,5 @@ export function PortfolioSection() {
         </Dialog>
       </div>
     </section>
-  )
+  );
 }

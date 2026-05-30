@@ -89,14 +89,17 @@ export function TeamSection() {
               <div className="aspect-square overflow-hidden bg-background">
                 <Image
                   src={member.image || "/placeholder.svg"}
-                  alt={member.name}
+                  alt={`${member.name} - ${member.role} at VyuApp`}
                   width={400}
                   height={400}
                   className="h-full w-full object-cover transition-transform duration-300 group-hover:scale-105"
+                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 400px"
                 />
               </div>
               <div className="p-6 border-t border-border">
-                <h3 className="text-lg font-bold text-text-primary">{member.name}</h3>
+                <h3 className="text-lg font-bold text-text-primary">
+                  {member.name}
+                </h3>
                 <p className="text-sm text-accent font-medium">{member.role}</p>
                 <p className="mt-2 text-muted-foreground">{member.bio}</p>
                 <div className="mt-4 flex space-x-2">

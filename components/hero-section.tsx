@@ -26,17 +26,28 @@ export function HeroSection() {
                 Innovative Technology Solutions for Modern Businesses
               </h1>
               <p className="max-w-[600px] text-lg text-text-secondary leading-relaxed">
-                We deliver cutting-edge web applications and digital experiences, crafting every aspect of your beautiful vision into our digital realm.
+                We deliver cutting-edge web applications and digital
+                experiences, crafting every aspect of your beautiful vision into
+                our digital realm.
               </p>
             </div>
             <div className="flex flex-col gap-3 min-[400px]:flex-row pt-4">
-              <Button asChild size="lg" className="h-11 px-8 bg-primary hover:bg-primary-hover text-white font-semibold rounded-md">
+              <Button
+                asChild
+                size="lg"
+                className="h-11 px-8 bg-primary hover:bg-primary-hover text-white font-semibold rounded-md"
+              >
                 <Link href="#contact">
                   Get Started
                   <ArrowRight className="ml-2 h-4 w-4" />
                 </Link>
               </Button>
-              <Button asChild variant="outline" size="lg" className="h-11 px-8 border border-border rounded-md font-semibold text-text-primary hover:bg-background">
+              <Button
+                asChild
+                variant="outline"
+                size="lg"
+                className="h-11 px-8 border border-border rounded-md font-semibold text-text-primary hover:bg-background"
+              >
                 <Link href="#portfolio">View Our Work</Link>
               </Button>
             </div>
@@ -50,10 +61,11 @@ export function HeroSection() {
             <div className="relative w-full aspect-video overflow-hidden rounded-lg border border-border bg-surface shadow-elevation-2 hover:shadow-elevation-3 transition-shadow">
               <Image
                 src="/images/hero.jpeg"
-                alt="Innovative technology solutions with React and Next.js"
+                alt="VyuApp innovative technology solutions - showcasing cutting-edge web development and digital experiences"
                 fill
                 className="object-cover"
                 priority
+                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 80vw, 600px"
               />
             </div>
           </motion.div>
