@@ -98,11 +98,19 @@ export const metadata: Metadata = {
     images: [`${siteUrl}/og-image.jpg`],
   },
   icons: {
-    icon: "/favicon.ico",
-    shortcut: "/favicon-16x16.png",
-    apple: "/apple-touch-icon.png",
+    icon: "/favicon/favicon.ico",
+    shortcut: "/favicon/favicon-16x16.png",
+    apple: "/favicon/apple-touch-icon.png",
+    other: [
+      {
+        rel: "icon",
+        type: "image/png",
+        sizes: "32x32",
+        url: "/favicon/favicon-32x32.png",
+      },
+    ],
   },
-  manifest: "/site.webmanifest",
+  manifest: "/favicon/site.webmanifest",
   applicationName: "VyuApp",
   appleWebApp: {
     capable: true,
